@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Sam Perrin]]></title><description><![CDATA[Automation Consultant, currently working at Xtravirt. Interested in all things automation/devops related.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 01 Jun 2020 15:01:24 GMT</lastBuildDate><item><title><![CDATA[The Importance Of Standards]]></title><description><![CDATA[In this article we will take a look at a process that hasn’t been standardised, and then compare it to the same process with some standards applied. ]]></description><link>https://samperrin.netlify.com/posts/The-Importance-Of-Standards</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/The-Importance-Of-Standards</guid><pubDate>Mon, 10 Feb 2020 15:05:43 GMT</pubDate><content:encoded>&lt;p&gt;Recently I have been working with a financial industry customer who is all in on Automation, however it became apparent quite early on that they haven’t standardised their processes. Now, in day to day running’s and operations of a business – particularly IT – this might not be a problem, but when you want to start automating, a lack of standards begins to complicate things. In the below article we will take a look at a process that hasn’t been standardised, and then compare it to the same process with some standards applied. We will then go on to discuss how much simpler it is to automate a standardised process.&lt;/p&gt;
+&lt;h3&gt;Non-standardised Process 1 – Creating a new user&lt;/h3&gt;
+&lt;p&gt;This process creates a new user, currently there are three ways someone can request a new account, and as we can see the information can arrive staggered, each of the yellow block. This results in multiple edits and updates before the account is ready for handover.&lt;/p&gt;
+&lt;p&gt;This staggered process also introduces the risk of error, for example, the request received via the phone might result in the incorrect spelling of a surname which then requires more edits to the user account.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fc17a8606ed6a2f045e97910ca5b6858/951a4/importance_of_standards_pic1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 18.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABI0lEQVQY0zWQPUsCAQBA/Wn9igoaaquhTYgaCgyiIZKCCJKooRApcMrMsjS1U1LRzK9Ty/NOOysvKb/yzHtJ0IO3vuGZWpcS/bcwXWGZ/keRTmiRbzUK6e2RG9hKYEmDUQ1AeIlMLcaCYEWuK7CbwhA1/jGGBqb2tUJfcdHxzaM3MvxcTUHtBvt9HHdeoiz6SUfsPIhOjoOrqPUESe8cNSXC4dkBopyHO5VBofEXNbX8Cj01QC9iod0oUghZaWlPHOWaOHMvtLJ7fKZ2iKsp9sNW3uVbNGGFulbEFl3nsSpQORF4jecxugNMX64yPcmJ7pmk1mwydjHApw4hOA2JNbaSDszBTYaiA7wzxCohxs/NlOTRAvcEuuRhNriI/fkU3Z7lF9GeECJ0Yj/WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;importance of standards pic1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fc17a8606ed6a2f045e97910ca5b6858/d9199/importance_of_standards_pic1.png&quot;
+        srcset=&quot;/static/fc17a8606ed6a2f045e97910ca5b6858/8ff5a/importance_of_standards_pic1.png 240w,
+/static/fc17a8606ed6a2f045e97910ca5b6858/e85cb/importance_of_standards_pic1.png 480w,
+/static/fc17a8606ed6a2f045e97910ca5b6858/d9199/importance_of_standards_pic1.png 960w,
+/static/fc17a8606ed6a2f045e97910ca5b6858/951a4/importance_of_standards_pic1.png 1355w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;On top of the different ways the process can be run, we also have no naming standards within this process, for example;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A new user request comes in with the first name and last name details of Joe Bloggs&lt;/li&gt;
+&lt;li&gt;Service Desk Staff 1 generates the username of: jbloggs (first name initial and full last name)&lt;/li&gt;
+&lt;li&gt;Service Desk Staff 2 generates the username of: bloggj (first five characters from last name and first name initial)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1b1cb1d2757d658577ef71eb1c6f6288/42de8/importance_of_standards_pic2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 39.583333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABV0lEQVQoz3VSwUrDQBDNP3j3N/SiHkQp9GxF/QevHj1IL95FLOKhKCiIFerBiohQb3rRgwcRBUsktTamTZMmu7P73N3GWts48Egys+9t3sxYUkoM4id+c0J/gIjgdTmaAYMbMrS7DFKIobMSlhTSFMyThOb+FU4QM45cpY7smYOp0js2bl1TJ0p4Cd/CSPTEpFB/EPuQ0Rd46IJxgeWLnuC0EszfaUExwrY6l094m98xqK+VjVwUttA+mUX7aBKtwhiC+21E5hbqE4mTyXnXz6hlCqhld9FYP4cVVF9grxwo7KORr0BTWo+H8PbG4Z9m0CnNqQtcRKrgxwQnIHyEBF/1Uwu6N6+wc0XYi0U0N6/SLKvgASRLILgxpnu4pCzPKLsTx/b/lvvD6A9FQg51VOdiRlitfmJBDSZTdrD14JkqDfLVcK20tUnLca5tst7aKHTUu0hZm28ikVPSVm+dlwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;importance of standards pic2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1b1cb1d2757d658577ef71eb1c6f6288/d9199/importance_of_standards_pic2.png&quot;
+        srcset=&quot;/static/1b1cb1d2757d658577ef71eb1c6f6288/8ff5a/importance_of_standards_pic2.png 240w,
+/static/1b1cb1d2757d658577ef71eb1c6f6288/e85cb/importance_of_standards_pic2.png 480w,
+/static/1b1cb1d2757d658577ef71eb1c6f6288/d9199/importance_of_standards_pic2.png 960w,
+/static/1b1cb1d2757d658577ef71eb1c6f6288/42de8/importance_of_standards_pic2.png 1033w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;What is a Standard&lt;/h1&gt;
+&lt;p&gt;Standardisation is a set of rules and agreements that all users or consumers must adhere to, so that all processes are equal and meet set guidelines. This ensures that the end product has consistent quality and that any conclusions made are comparable with all other equivalent items in the same process. Standardisation is achieved by setting generally accepted guidelines with regard to how a product or service is created or supported, as well as to how a business is operated or how certain required processes are governed. The goal of standardisation is to enforce a level of consistency or uniformity to certain practices or operations within the selected environment.&lt;/p&gt;
+&lt;p&gt;(Reference: &lt;a href=&quot;https://www.investopedia.com/terms/s/standardization.asp&quot;&gt;https://www.investopedia.com/terms/s/standardization.asp&lt;/a&gt;)&lt;br&gt;
+(Reference: &lt;a href=&quot;http://www.qualityindustries.com/news-and-events/2015/06/30/five-benefits-of-standardized-work.1652673&quot;&gt;http://www.qualityindustries.com/news-and-events/2015/06/30/five-benefits-of-standardized-work.1652673&lt;/a&gt;)&lt;/p&gt;
+&lt;h1&gt;Standardised Process 1 – Creating a new user&lt;/h1&gt;
+&lt;p&gt;This is the same process as we saw earlier, but we have now applied standards. All requests for a new user must come in through a form, and this form has data fields that the requester must complete before submitting.&lt;/p&gt;
+&lt;p&gt;This now ensures that all data required for a user account arrives at once, and because it is via a typed form, we avoid the issues of misinterpretation that we had earlier with the first &amp;#x26; last name spelling.&lt;/p&gt;
+&lt;p&gt;The new process reduces the number of edits and ultimately results in the requester getting their end product – the user account – much sooner.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f82c63c1d4bbf49cc1a99e8426aa5e48/187fa/importance_of_standards_pic3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 16.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA10lEQVQI122OsWrCYACEM7n5DF066VIfoXUTZ6eCb9A3EEq7CW6Cg4IOQbc6dJBWLKXtoO4qCAoaxWhMTTRE/RPzGV314ODguI+TuCJX7yKG74hR3ffHOTvT33O3dQ5sxIGt64HnXWwlo9hmHM0xfZTZzyxsx8Ys3bLKBliXI5jFG/S0xL71jCrgvqoQrkxI1FRsH2B8D1BieZR4AftviGQ1+mipGnrmC9fyH/RlVrkgaznE5u3Bh95hViKw+8dw4OlHI9lYkGrqiNPjjor28snytc6uN+cIrlTNIZpkA/YAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;importance of standards pic3&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f82c63c1d4bbf49cc1a99e8426aa5e48/d9199/importance_of_standards_pic3.png&quot;
+        srcset=&quot;/static/f82c63c1d4bbf49cc1a99e8426aa5e48/8ff5a/importance_of_standards_pic3.png 240w,
+/static/f82c63c1d4bbf49cc1a99e8426aa5e48/e85cb/importance_of_standards_pic3.png 480w,
+/static/f82c63c1d4bbf49cc1a99e8426aa5e48/d9199/importance_of_standards_pic3.png 960w,
+/static/f82c63c1d4bbf49cc1a99e8426aa5e48/187fa/importance_of_standards_pic3.png 1194w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;In the previous non-standardised process, we also had the differences in naming standards, these have now changed and all users created are in the format of: first initial and full last name.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f8dedd14f29b6cce04ae2bcfe9440338/3dde1/importance_of_standards_pic4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 12.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA5UlEQVQI1zWMMUsCYQCGP2jUub9Ri3Nbc6NrW0NDRYNNTdEsBrVFGJJIizgJiYElJBrZoEcFKicienjfnXdfeuc9eQe94/u87yOc6jeqMSDwfP7z275Zd5eotwucygGB1SOkd11J+sPk6lOSaUt024v2K7XEfe3hPP8gtFiKjjjBqmiE2OgUmWU2sHJbmNcxzIcE/irAUD6Jgs52Xme3OGLztk996EZCPdukK47R4mcIed9E5t/xpUuwhvP6OfbjDk71kHlpj+WwFp0Wnsfpi8H+04Sj2pRkeczXbBExNbaRuRah6w/ANMnTWN5kcgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;importance of standards pic4&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f8dedd14f29b6cce04ae2bcfe9440338/d9199/importance_of_standards_pic4.png&quot;
+        srcset=&quot;/static/f8dedd14f29b6cce04ae2bcfe9440338/8ff5a/importance_of_standards_pic4.png 240w,
+/static/f8dedd14f29b6cce04ae2bcfe9440338/e85cb/importance_of_standards_pic4.png 480w,
+/static/f8dedd14f29b6cce04ae2bcfe9440338/d9199/importance_of_standards_pic4.png 960w,
+/static/f8dedd14f29b6cce04ae2bcfe9440338/3dde1/importance_of_standards_pic4.png 1018w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;Automating Process&lt;/h1&gt;
+&lt;p&gt;When automating a process, we can see how standards simplify the task. Without standards we would need to account for every scenario that the request could follow, allow for breaks in the process, enable human interaction, and provide error correction. With standards we can allow automation to generate the username, validate the inputs and hand over the item to the requester.&lt;/p&gt;
+&lt;p&gt;When we have standards, estimating the time required for automation also becomes simpler, we have a clearly defined process with a set of inputs (the user details) and an expected outcome (the user account).&lt;/p&gt;
+&lt;p&gt;Once the process is standardised, and automated, changes to this process become more controlled – we can introduce and enforce a review process which means any changes to the process are agreed within the team and released in an agreed manner.&lt;/p&gt;
+&lt;h1&gt;How Can You Standardise?&lt;/h1&gt;
+&lt;p&gt;This is a very simplified approach, but it’s a great start for introducing standards.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Identify the core processes owners&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;These are the people that run it day-to-day (e.g. service desk staff)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hold a process review workshop with the process owners&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Include someone who can moderate the meeting and create agreement between the team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Whiteboard the process, get each owner to do it to highlight any differences&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Like the non-standardised flow diagrams above, this will show differences amongst the team&lt;/li&gt;
+&lt;li&gt;Remember that because process owners might have their own view on a process, they aren’t wrong&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Identify the following information for the process&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Process Inputs (what information is needed for the process to run, this can be from both users and other systems)&lt;/li&gt;
+&lt;li&gt;Process Outputs (what is the end product of the process, what does the requester get at the end)&lt;/li&gt;
+&lt;li&gt;Error handling (what happens in an error occurs at each of the steps)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For any process inputs, try to identify standards within those&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Naming standards, for example, username generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;As an outcome, you should have one documented process that has been agreed by all process owners, this is your new standard&lt;/li&gt;
+&lt;li&gt;Try to identify how this will be rolled out to the business and enforced – this is important, otherwise your standard will collapse again!&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[VMware vRealize Automation 8 Podcast]]></title><description><![CDATA[Cloud Insiders vRA8 Podcast]]></description><link>https://samperrin.netlify.com/posts/VMware-vRealize-Automation-8-Podcast</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/VMware-vRealize-Automation-8-Podcast</guid><pubDate>Wed, 27 Nov 2019 14:58:58 GMT</pubDate><content:encoded>&lt;p&gt;“Automation has come a long way from the days of pen and paper, flowcharts, code and scripts, and now with the release of VMware vRealize Automation (vRA) 8 it’s moved to another level. Easy to deploy, streamlined, user friendly and faster – in this podcast, &lt;a href=&quot;https://www.xtravirt.com/automation&quot;&gt;Xtravirt Cloud Automation&lt;/a&gt; consultant &lt;a href=&quot;https://twitter.com/sam_perrin&quot;&gt;Sam Perrin&lt;/a&gt; discusses what vRA 8 is all about and why it’s re-ignited his excitement and passion for automation.”&lt;/p&gt;
+&lt;iframe src=&quot;https://player.acast.com/cloud-insiders/episodes/tech-focus-vmware-vrealize-automation-8&quot; frameBorder=&quot;0&quot; width=&quot;100%&quot; height=&quot;110px&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Small, Medium or Large: There Is No One Size Fits All]]></title><description><![CDATA[Working out the effort required for an automation project can be challenging. The primary advantage to t-shirt sizes is the speed and ease of getting started and they can be a great way of getting used to relative estimating]]></description><link>https://samperrin.netlify.com/posts/Small--Medium-or-Large--There-Is-No-One-Size-Fits-All</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Small--Medium-or-Large--There-Is-No-One-Size-Fits-All</guid><pubDate>Tue, 18 Dec 2018 14:53:07 GMT</pubDate><content:encoded>&lt;h2&gt;Why A T-Shirt &amp;#x26; Do I Look Good In This?&lt;/h2&gt;
+&lt;p&gt;Working out the effort required for an automation project can be challenging. Teams may have different abilities and skill-sets causing individuals effort estimations for tasks to differ. The primary advantage to t-shirt sizes is the speed and ease of getting started and they can be a great way of getting used to relative estimating&lt;br&gt;
+By expelling the focus on a numerical score, the development team has the ability and freedom to think more dynamically and abstractly about the effort associated with a request. By limiting the number of t-shirt sizes, you allow for faster estimates and less deliberation around placement. You can use t-shirts without a numerical value associated with them, but with the values you can better identify the differences in size between the t-shirts and use those same values for pricing and velocity calculations.&lt;/p&gt;
+&lt;h2&gt;What’s In A T-Shirt&lt;/h2&gt;
+&lt;p&gt;A t-shirt is a defined amount of effort, measured in days, hours, points, or anything else you feel appropriate. These types of estimates become more efficient and effective when you have lots of ‘things’ to estimate at the same time, rather than just a single ‘thing.’ Behind a t-shirt size you often have a numerical value associated to it, this can be Fibonacci numbers or hours and days. So for example, if you believe the new requirement will suit a medium t-shirt size, you now have an idea of the effort that will be required. The table below shows an example of days of effort per t-shirt size.&lt;/p&gt;
+&lt;h2&gt;T-Shirt Sizing Table&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Effort (days)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Small&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Medium&lt;/td&gt;
+&lt;td&gt;2-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Large&lt;/td&gt;
+&lt;td&gt;4.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;X-Large&lt;/td&gt;
+&lt;td&gt;Estimated Per Requirement!&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;So How Do We Get Started?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We create a relative estimation. We do this by comparing the new requirement to a previous requirement&lt;/li&gt;
+&lt;li&gt;The old and new requirements are evaluated (at a high level) and a decision is made as to if they are equivalent in effort or not&lt;/li&gt;
+&lt;li&gt;If the old requirement had previously been gauged a ‘medium t-shirt’ and the requirement doesn’t fit this size.. well, you pick the right size t-shirt to fit the body!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Does It Fit Right&lt;/h2&gt;
+&lt;p&gt;During the development process you will get an idea if the estimate was accurate or not. If it’s way off adjust it accordingly. Just keep in mind that it’s also beneficial to keep with the initial estimate so that it can be reviewed afterwards. When you do, it allows you to ask questions such as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why was the initial estimate for the request an S,M,L,XL?&lt;/li&gt;
+&lt;li&gt;When the work was finished, was the request more like a S,M,L,XL?&lt;/li&gt;
+&lt;li&gt;Why was the request larger than expected?&lt;/li&gt;
+&lt;li&gt;What made this request an S,M,L,XL instead of a S,M,L,XL? Was there just more work? Was this type of work new?&lt;/li&gt;
+&lt;li&gt;How can we avoid underestimating this type of request in the future &lt;em&gt;(&lt;strong&gt;hint:&lt;/strong&gt; adopting a working Agile methodology, working in sprints and having planning and review sessions will greatly help with this. A blog post for another time maybe?)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you have reviewed your estimates against the reality (post delivery) you can build out or adjust your baseline for each size. New requests from this point will use this baseline. If a request is too big to fit a t-shirt you have two options&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Break it down into smaller requirements that do fit within your sizes&lt;/li&gt;
+&lt;li&gt;As a last resort, place it into a X-Large or XX-Large t-shirt size where you don’t have an estimation of effort &lt;em&gt;(&lt;strong&gt;warning:&lt;/strong&gt; This is a really bad idea and completely devalues all your other sizing efforts. You don’t know how long it will take, amount of resource required, cost.. so what do I do? you ask. See the previous point)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How Does Xtravirt Use T-Shirt Sizes?&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e3c16d35c3fc39036e99d25aee687789/5a46d/xtravirt_blue_sl-3x-300x83.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 300px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 27.500000000000004%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABVElEQVQY02NgQAbzHtkBcTEDMWDeIz8gDkDiJwNxCIgxH4ijgLgHiGcA8S8gngjER6BiRUB8DoibgHgSELMBcRUQTwfiNUB8AIi7gfgYEL8HGdjAsOztf8Z5D7WA7DggXgTECUB8HIjjgfgU49wHikB6LxBfhlq2DIgLgfg1EO8DYj6oY9oZGBY87WGY/+Q3w8IXVgwLX1kwzH+6nWHBsxKgWAfDkvfSQPo8UNwcSN8EiucD5f8zLHjuA8ThDPMf/waK10K93AzEqxh4Zl6dLz35WCjnrJuzgqp7RIH8KVyzbmzgnnk9E6SOb8aVAo7Ztw4B5ffJTTxkzjvjSrVd8yIJkWlnA4HiG4HiiRADH0qCXV6fHutalxHvWZuRYFGQl+vdnhJq15YSrlOdmWScl1/gCuRb9yQFmLSlhtsX52bp16fHuRTm5riU5mS4gNhArIocVwB/vsG+HcbJ2QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;xtravirt blue sl 3x 300x83&quot;
+        title=&quot;&quot;
+        src=&quot;/static/e3c16d35c3fc39036e99d25aee687789/5a46d/xtravirt_blue_sl-3x-300x83.png&quot;
+        srcset=&quot;/static/e3c16d35c3fc39036e99d25aee687789/8ff5a/xtravirt_blue_sl-3x-300x83.png 240w,
+/static/e3c16d35c3fc39036e99d25aee687789/5a46d/xtravirt_blue_sl-3x-300x83.png 300w&quot;
+        sizes=&quot;(max-width: 300px) 100vw, 300px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Often the information received during an automation project kickoff, is the name and a brief description of the Service Request (the thing that needs to be automated). The real detail is missing at this stage. Having a small amount of information makes detailed planning difficult, you have questions that need to be answered, you don’t know the risks, full requirements or the even the success criteria; yet you still need to provide two estimates to the customer – a cost estimate and an effort estimate. This is where t-shirt sizes help us. &lt;/p&gt;
+&lt;p&gt;We work with four sizes; small, medium, large and extra-large. Together as a team we go through the list of Service Requests, discuss what we believe may be required and provide our estimates. These estimates are based on previous experience and so afford us an educated idea on what size to allocate (relative estimation). When the team are agreed on the size of the Service Request we move on to the next until we have an estimate for all the required work. Once all the estimations are completed, we can provide an idea on the total effort, which then leads to an informed cost quote for the customer!&lt;/p&gt;
+&lt;p&gt;Due to our experiences, we have been able to analyse our decisions, see where we have over or under estimated effort and identify why that happened. This allows us to ensure the original t-shirt still fits. If it doesn’t, we can change it for future estimates. Using this data, we can build out a baseline number of days associated to each t-shirt size.&lt;/p&gt;
+&lt;h2&gt;The Takeaway&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create effort estimations before commencing any work&lt;/li&gt;
+&lt;li&gt;Record actual effort&lt;/li&gt;
+&lt;li&gt;Review actual vs estimated effort to better educate yourself for ‘next time’&lt;/li&gt;
+&lt;li&gt;Using terminology such as ‘t-shirt’ sizes help abstract away from hours, minutes, days of effort which is often hard to quantify&lt;/li&gt;
+&lt;li&gt;Continual refinement and education means better estimation of effort and delivery cost as opposed to continually working with ‘Guesstimates’&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Behind Automation]]></title><description><![CDATA[Cloud Insiders "Behind Automation" Podcast]]></description><link>https://samperrin.netlify.com/posts/Behind-Automation</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Behind-Automation</guid><pubDate>Fri, 14 Sep 2018 13:50:53 GMT</pubDate><content:encoded>&lt;p&gt;I was lucky enough to partake in a podcast recently with colleagues Paul Davey and Stuart Robinson of &lt;a href=&quot;http://xtravirt.com/&quot;&gt;Xtravirt&lt;/a&gt;. If you want to learn more about automation then please check it out!&lt;/p&gt;
+&lt;p&gt;This episode outlines:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is automation?&lt;/li&gt;
+&lt;li&gt;The common reasons businesses are automating business processes.&lt;/li&gt;
+&lt;li&gt;Some of tools being used in automation – from Puppet and Chef for configuration management to HashiCorp’s options for provisioning, security and the running of applications.&lt;/li&gt;
+&lt;li&gt;The need for businesses to take a business logic first approach to automation projects.&lt;/li&gt;
+&lt;li&gt;Some common mistakes to avoid.&lt;/li&gt;
+&lt;li&gt;How Xtravirt have designed workshops and best practice methodologies to ensure automation projects stay on track and deliver the business outcomes they were intended to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can listen to the podcast by clicking &lt;a href=&quot;https://shows.pippa.io/cloud-insiders/behind-automation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Install VestaCP on Google Cloud in 5 steps]]></title><description><![CDATA[5 quick steps to get up and running with VestaCP and finish with adding your first domain to the portal.]]></description><link>https://samperrin.netlify.com/posts/Install-VestaCP-on-Google-Cloud-in-5-steps</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Install-VestaCP-on-Google-Cloud-in-5-steps</guid><pubDate>Mon, 29 Aug 2016 13:47:28 GMT</pubDate><content:encoded>&lt;p&gt;This article will provide you with 5 quick steps to get up and running with VestaCP and finish with adding your first domain to the portal.&lt;/p&gt;
+&lt;p&gt;VestaCP is an Open Source control panel that helps you manage your web server and simplifies a lot of things! &lt;a href=&quot;https://vestacp.com/&quot;&gt;https://vestacp.com/&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Within the Google Cloud Console, navigate to &lt;a href=&quot;https://console.cloud.google.com/networking/firewalls/&quot;&gt;Networking &gt; Firewall Rules&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a new firewall rule for VestaCP&lt;/li&gt;
+&lt;li&gt;Name = &lt;code class=&quot;language-text&quot;&gt;vestacp-panel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Source Filter = &lt;code class=&quot;language-text&quot;&gt;allow from any source (0.0.0.0/0)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Allowed protocols and ports= &lt;code class=&quot;language-text&quot;&gt;8083/tcp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Target Tags = &lt;code class=&quot;language-text&quot;&gt;vestacp-panel&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deploy a new &lt;a href=&quot;https://console.cloud.google.com/compute/instances&quot;&gt;Compute Engine VM Instance&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Define Name and Zone based on your preference&lt;/li&gt;
+&lt;li&gt;Choose Machine Type (I have used “micro”)&lt;/li&gt;
+&lt;li&gt;Boot Disk = 10gb and CentOS 7&lt;/li&gt;
+&lt;li&gt;Firewall = allow HTTP and HTTPS (so your websites can get through when setup)&lt;/li&gt;
+&lt;li&gt;Expand “Management, disk, networking, SSH keys”&lt;/li&gt;
+&lt;li&gt;Under Management, in the Tags section, add “vestacp-panel”&lt;/li&gt;
+&lt;li&gt;Under Networking, assign a New Static External IP (or re-use an old one if you have any) – take note of the External IP assigned, you’ll need this later.&lt;/li&gt;
+&lt;li&gt;Create the instance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wait for the new VM to finish deploying, connect to it via SSH and install VestaCP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;cd /tmp/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;curl -O http://vestacp.com/pub/vst-install.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;sudo bash vst-install.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Follow the on screen steps&lt;/li&gt;
+&lt;li&gt;When it asks for an FQDN, provide the full URL that you will use to access the portal (e.g. panel.example.com) – you will also need to add this as an A record for your domain.&lt;/li&gt;
+&lt;li&gt;Take note of password presented to you at the end of the install&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Login to your new VestaCP Control Panel&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;https://&amp;lt;your_server_ip&amp;gt;:8083&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;https://&amp;lt;your_server_URL&amp;gt;:8083&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Username = &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Password = provided at the end of Step 3&lt;/li&gt;
+&lt;li&gt;If you can’t reach the portal, check your Firewall Rules from Step 1 and ensure your VM has the correct tags, as per Step 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure your VestaCP server&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Edit the Admin user and change the password to something secure&lt;/li&gt;
+&lt;li&gt;Edit the VestaCP firewall and modify any existing rules to drop traffic you don’t want/need (POP3, DB, PING etc)&lt;/li&gt;
+&lt;li&gt;Add your domain&lt;/li&gt;
+&lt;li&gt;After this you’ll need to point your website to your new VestaCP web server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are plenty more things to set up within VestaCP, such as setting Private Nameservers, creating Packages etc but the above will get you up and running.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Elasticsearch Cluster Install on CentOS 7]]></title><description><![CDATA[Setup a simple 3 not Elasticsearch cluster]]></description><link>https://samperrin.netlify.com/posts/Elasticsearch-Cluster-Install-on-CentOS-7</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Elasticsearch-Cluster-Install-on-CentOS-7</guid><pubDate>Fri, 24 Jun 2016 13:43:15 GMT</pubDate><content:encoded>&lt;p&gt;This post wont go in to any detail around setting up CentOS itself, but it will cover getting a simple 3 node Elasticsearch cluster up and running, with a couple of helpful plugins.&lt;/p&gt;
+&lt;p&gt;Install Java and check the install&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yum install java-1.8.0-openjdk.x86_64 -y
+java -version&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Download Elasticsearch (check the site &lt;a href=&quot;https://www.elastic.co/downloads/elasticsearch&quot;&gt;here&lt;/a&gt; for the latest versions)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cd /tmp
+wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.2.1/elasticsearch-2.2.1.rpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Install Elasticsearch&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cd /tmp
+sudo rpm -ivh elasticsearch-2.2.1.rpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This results in Elasticsearch being installed in &lt;code class=&quot;language-text&quot;&gt;/usr/share/elasticsearch/&lt;/code&gt; with its configuration files placed in &lt;code class=&quot;language-text&quot;&gt;/etc/elasticsearch&lt;/code&gt; and its init script added in &lt;code class=&quot;language-text&quot;&gt;/etc/init.d/elasticsearch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Enable Elasticsearch on Boot&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo systemctl enable elasticsearch.service&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Configure Elasticsearch&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vi /etc/elasticsearch/elasticsearch.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add near the top, and replace anything in &amp;#x3C; &gt; with your details&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cluster.name: &amp;lt;name of the cluster&amp;gt;
+#below line dynamically sets the node name based on the server hostname
+node.name: ${HOSTNAME}
+#below binds elasticsearch to the local (127.0.0.1) and site ip address (e.g. 192.168.1.1)
+network.host: [_site_, _local_]
+http.port: 9200
+bootstrap.mlockall: true
+#below sets the nodes the cluster should find
+discovery.zen.ping.unicast.hosts: [&amp;quot;&amp;lt;node1_ip_or_fqdn&amp;gt;&amp;quot;, &amp;quot;&amp;lt;node2_ip_or_fqdn&amp;gt;&amp;quot;, &amp;quot;&amp;lt;node3_ip_or_fqdn&amp;gt;&amp;quot;]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Restart and Verify Elasticsearch status&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo systemctl restart elasticsearch.service
+sudo systemctl status elasticsearch.service&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You should be able to access the node now, on: &lt;code class=&quot;language-text&quot;&gt;http://&amp;lt;node-ip&amp;gt;:9200&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Optional:&lt;/strong&gt; Install Elastic-HQ and Head Plugins&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cd /usr/share/elasticsearch/
+bin/plugin install mobz/elasticsearch-head
+sudo bin/plugin install royrusso/elasticsearch-HQ
+sudo systemctl restart elasticsearch.service
+sudo systemctl status elasticsearch.service&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once installed, you can access these plugins via:&lt;br&gt;
+Head = http://&lt;node-ip&gt;:9200/&lt;em&gt;plugin/head&lt;br&gt;
+HQ = http://&lt;node-ip&gt;:9200/&lt;/em&gt;plugin/hq&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Additional Nodes:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Repeat the same process on your other servers, you can add more than 3 nodes to the cluster, but if you do make sure you update &lt;code class=&quot;language-text&quot;&gt;discovery.zen.ping.unicast.hosts&lt;/code&gt; in your Elasticsearch config to include those additional nodes.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CentOS 7 – Installing pymssql with pip, libgnutls.so.26 error]]></title><description><![CDATA[When trying to install pymssql with pip you may get a requirements error for libgnutls.so.26]]></description><link>https://samperrin.netlify.com/posts/CentOS-7---Installing-pymssql-with-pip--libgnutls-so-26-error</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/CentOS-7---Installing-pymssql-with-pip--libgnutls-so-26-error</guid><pubDate>Tue, 09 Feb 2016 14:39:11 GMT</pubDate><content:encoded>&lt;!--StartFragment--&gt;
+&lt;p&gt;When trying to install pymssql with pip you may get a requirements error for libgnutls.so.26&lt;/p&gt;
+&lt;p&gt;To fix this error I took the following steps:&lt;/p&gt;
+&lt;p&gt;For the below you may need the EPEL repo, install this with the below command&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yum install epel-release&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install gcc&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yum install gcc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Install python-devel&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yum install python-devel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Download &lt;code class=&quot;language-text&quot;&gt;freetds-devel&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;freetds&lt;/code&gt; for CentOS 7 and store in &lt;code class=&quot;language-text&quot;&gt;/tmp/&lt;/code&gt; (or somewhere else, but remember where you stored it for later)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://rpm.pbone.net/index.php3/stat/4/idpl/31220521/dir/redhat_el_7/com/freetds-devel-0.95.19-1.el7.x86_64.rpm.html&quot;&gt;http://rpm.pbone.net/index.php3/stat/4/idpl/31220521/dir/redhat_el_7/com/freetds-devel-0.95.19-1.el7.x86_64.rpm.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://rpm.pbone.net/index.php3/stat/4/idpl/31220520/dir/redhat_el_7/com/freetds-0.95.19-1.el7.x86_64.rpm.html&quot;&gt;http://rpm.pbone.net/index.php3/stat/4/idpl/31220520/dir/redhat_el_7/com/freetds-0.95.19-1.el7.x86_64.rpm.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install both of them&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yum install /tmp/freetds-0.95.19-1.el7.x86_64.rpm
+yum install /tmp/freetds-devel-0.95.19-1.el7.x86_64.rpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Run &lt;code class=&quot;language-text&quot;&gt;pip install pymssql&lt;/code&gt; again, it should hopefully succeed this time.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FortiGate as Slave DNS with Windows DNS Master]]></title><description><![CDATA[Setup your FortiGate device so that requests towards specific domains are forwarded to a Windows DNS server. ]]></description><link>https://samperrin.netlify.com/posts/FortiGate-as-Slave-DNS-with-Windows-DNS-Master</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/FortiGate-as-Slave-DNS-with-Windows-DNS-Master</guid><pubDate>Sat, 24 Oct 2015 13:37:45 GMT</pubDate><content:encoded>&lt;p&gt;It is possible to setup your FortiGate device so that requests towards specific domains are forwarded to a Windows DNS server. Below are the steps needed to get this working.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On the Windows Master DNS Server&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open DNS Manager and open the zone needed&lt;/li&gt;
+&lt;li&gt;Find the Start of Authority (SOA) record&lt;/li&gt;
+&lt;li&gt;Properties &gt; Zone Transfers&lt;/li&gt;
+&lt;li&gt;Allow Zone Transfers &gt; To Any Server (you can also specify the server)&lt;/li&gt;
+&lt;li&gt;Open ‘Notify’ and add in the Slave DNS IP address (the IP your FortiGate will be seen as to the Master DNS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;On the FortiGate Slave&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enable the DNS Database feature (System &gt; Config &gt; Features)&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to System &gt; Network &gt; DNS Servers and Create a new DNS Database.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: Slave&lt;/li&gt;
+&lt;li&gt;View: Shadow&lt;/li&gt;
+&lt;li&gt;DNS Zone:&lt;em&gt;&amp;#x3C;dns_zone&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Domain Name:&lt;em&gt;&amp;#x3C;dns_zone.local&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;IP of Master:&lt;/li&gt;
+&lt;li&gt;Authoritative: Enable/Disable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;You will then to add an SRV record, as well as identify the source IP address if your Master DNS is over VPN;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connect to FortiGate CLI&lt;/li&gt;
+&lt;li&gt;Add SRV record&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system dns-database
+edit &amp;quot;&amp;lt;dns_zone&amp;gt;&amp;quot;
+set forwarder &amp;quot;&amp;lt;IP of Master DNS&amp;gt;&amp;quot;
+next
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Specify source IP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system dns-database
+edit &amp;quot;&amp;lt;dns_zone&amp;gt;&amp;quot;
+set source-ip &amp;quot;&amp;lt;IP of FortiGate&amp;gt;&amp;quot;
+next
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Add the DNS service to the Interface&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to System &gt; Network &gt; DNS Servers and Create a new DNS Service.&lt;/li&gt;
+&lt;li&gt;Interface:&lt;em&gt;&lt;Interface users will connect to&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Mode: Recursive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can test the new DNS service works by running a ping through your FortiGate CLI&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;execute ping-options source &amp;lt;interface IP address&amp;gt;
+execute ping &amp;lt;FQDN of a server in the new DNS zone&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Potential Issues&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The interface your users connect to may be set to use the “Same as System DNS”. If you use external DNS servers this means your users will not benefit from the changes we have just made.&lt;/p&gt;
+&lt;p&gt;To fix this change the interface settings to be “Same as Interface IP”, this now means users will get the Interface IP as their DNS server, and will benefit from all DNS Database changes we make on the FortiGate&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FortiGate – Change Switch Mode]]></title><description><![CDATA[Change FortiGate device switch mode]]></description><link>https://samperrin.netlify.com/posts/FortiGate---Change-Switch-Mode</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/FortiGate---Change-Switch-Mode</guid><pubDate>Tue, 13 Oct 2015 13:36:16 GMT</pubDate><content:encoded>&lt;p&gt;Out of the box, your FortiGate device will most likely be in Switch mode, this groups the internal interfaces in to a single switch. To change to Interface mode, follow the below steps.&lt;/p&gt;
+&lt;p&gt;Interface mode allows you to control all of the interfaces separately. To change modes make sure none of the interfaces (lan/internal) are referenced&lt;/p&gt;
+&lt;p&gt;Enter Interface Mode&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system global
+set internal-switch-mode interface
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Enter Switch Mode:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system global
+set internal-switch-mode switch
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[FortiGate Reports Menu Missing]]></title><description><![CDATA[Resolve issue with Reports menu missing from Fortigate]]></description><link>https://samperrin.netlify.com/posts/FortiGate-Reports-Menu-Missing</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/FortiGate-Reports-Menu-Missing</guid><pubDate>Thu, 03 Sep 2015 13:34:40 GMT</pubDate><content:encoded>&lt;p&gt;You might come across an instance where your Reports menu is missing from within the FortiGate GUI. I noticed this today when I went to disable local report emails and wasn’t able to!&lt;/p&gt;
+&lt;p&gt;We use FortiAnalyzer for our reports, so when transferring to this we disabled Local Disk logging, this in turn removed the reports menu.&lt;/p&gt;
+&lt;p&gt;It is a quick fix to get the menu back;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connect to your FortiGate GUI&lt;/li&gt;
+&lt;li&gt;Log &amp;#x26; Report &gt; Log Config &gt; Log Settings&lt;/li&gt;
+&lt;li&gt;Enable Disk logging&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable Local Reports&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you are using FortiAnalyzer you may get an error message about Fortinet recommendations, you can ignore this for the moment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Log out and then Log back in, you will now see the menu&lt;/li&gt;
+&lt;li&gt;Log &amp;#x26; Report &gt; Log Config &gt; Report&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In my case we disabled “Email Generated Reports” and then disabled Local Reports and Disk logging. By disabling Local Reports you clear the FortiAnalyzer message you might have come across earlier.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FortiManager Disable SSLv3]]></title><description><![CDATA[FortiManager Disable SSLv3]]></description><link>https://samperrin.netlify.com/posts/FortiManager-Disable-SSLv3</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/FortiManager-Disable-SSLv3</guid><pubDate>Fri, 07 Aug 2015 13:29:30 GMT</pubDate><content:encoded>&lt;p&gt;This is documented in the latest release notes, but to quickly disable SSLv3 on your FortiManager device, run the following;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system global
+set ssl-protocol tlsv1
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[IPsec VPN with Public IP Subnet’s on a FortiGate]]></title><description><![CDATA[IPsec VPN with Public IP Subnet’s on a FortiGate]]></description><link>https://samperrin.netlify.com/posts/IPsec-VPN-with-Public-IP-Subnet-s-on-a-FortiGate</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/IPsec-VPN-with-Public-IP-Subnet-s-on-a-FortiGate</guid><pubDate>Tue, 23 Jun 2015 14:15:30 GMT</pubDate><content:encoded>&lt;p&gt;I recently came across a requirement where I had to create a site-to-site IPsec VPN, this is usually not an issue, set your Phase 1 and Phase 2 settings, apply your policies and you are good to go, but the difference this time was those local and remote subnets were Public IP addresses.&lt;br&gt;
+The Public IP address our side was also being used as a VIP&lt;/p&gt;
+&lt;p&gt;Below I will document the steps in getting this working – the issue I had was where I put my policies, and not enabling NAT on the outgoing policy!&lt;/p&gt;
+&lt;h3&gt;Create your IPsec tunnel;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;FortiGate GUI &gt; VPN &gt; IPsec &gt; Tunnels &gt; Create New&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set your name and chose your template. I used “Custom VPN Tunnel (No Template)”&lt;/li&gt;
+&lt;li&gt;Fill in your Phase1 settings&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fill in your Phase2 settings;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local Subnet – this will be your Public IP/Range&lt;/li&gt;
+&lt;li&gt;Remote Subnet – this will be their Public IP/Range&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Press OK to create the tunnel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Add in your new route;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;FortiGate GUI &gt; Router &gt; Static Routes &gt; Create New&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Destination IP/Mask – this will be the Remote Subnet you entered for your Phase2&lt;/li&gt;
+&lt;li&gt;Device – this will be the tunnel you have just created&lt;/li&gt;
+&lt;li&gt;Change any of the other settings if you need to&lt;/li&gt;
+&lt;li&gt;OK to add the new route&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Create an IP Pool;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;FortiGate GUI &gt; Policy &amp;#x26; Objects &gt; Objects &gt; IP Pools &gt; Create New&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a name and comments if required, and set the type (I am using Overload)&lt;/li&gt;
+&lt;li&gt;External IP Range = the range you set for Local Subnet&lt;/li&gt;
+&lt;li&gt;Ok to create the IP Pool&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Create your policies;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;FortiGate GUI &gt; Policy &amp;#x26; Objects &gt; Policy &gt; IPv4 &gt; Create New&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Outgoing&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Incoming Interface = The internal interface where your server exists&lt;/li&gt;
+&lt;li&gt;Source Address = An object with the internal IP address of your server&lt;/li&gt;
+&lt;li&gt;Outgoing Interface = The tunnel you just made&lt;/li&gt;
+&lt;li&gt;Destination Address = An object with the remote Public IP range&lt;/li&gt;
+&lt;li&gt;Apply any Schedules and Service restrictions and Action = Accept&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You now need to enable NAT, this is the bit I missed at first;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NAT = On&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use Dynamic IP Pool = Select the pool you made in the previous step&lt;/li&gt;
+&lt;li&gt;Add any other settings and then OK to create your first policy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Incoming&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create the second policy for Tunnel to Internal&lt;/li&gt;
+&lt;li&gt;Incoming Interface = The tunnel you just made&lt;/li&gt;
+&lt;li&gt;Source Address = An object with the remote Public IP range&lt;/li&gt;
+&lt;li&gt;Outgoing Interface = The internal interface where your server exists&lt;/li&gt;
+&lt;li&gt;Destination Address = The VIP that belongs to the internal server (same as the IP Pool address)&lt;/li&gt;
+&lt;li&gt;Apply any Schedules and Service restrictions and Action = Accept&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On this policy you &lt;strong&gt;do not need&lt;/strong&gt; NAT&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NAT = Off&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add any other settings and then OK to create your first policy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Check to see if your Tunnel is Up and try sending some traffic down it&lt;br&gt;
+&lt;em&gt;FortiGate GUI &gt; VPN &gt; Monitor &gt; IPsec Monitor&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;outgoing.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;incoming.png&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Disable SSLv3 on FortiGate GUI and SSL VPN]]></title><description><![CDATA[Disable SSLv3 on FortiGate GUI and SSL VPN]]></description><link>https://samperrin.netlify.com/posts/Disable-SSLv3-on-FortiGate-GUI-and-SSL-VPN</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Disable-SSLv3-on-FortiGate-GUI-and-SSL-VPN</guid><pubDate>Tue, 09 Jun 2015 14:14:30 GMT</pubDate><content:encoded>&lt;p&gt;To disable SSLv3 on both the FortiGate GUI and SSL VPN you need to run the below commands via CLI. According to the &lt;a href=&quot;http://www.fortiguard.com/&quot;&gt;FortiGuard&lt;/a&gt; website, the only reported compatibility issue that may follow with running the below is with IE6&lt;/p&gt;
+&lt;p&gt;For the HTTPS GUI:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system global
+set strong-crypto enable
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For SSL VPN:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config vpn ssl settings
+set sslv3 disable
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Set Port Speed for a FortiGate Virtual Switch Interface]]></title><description><![CDATA[FortiGate set a specific port within switch to a different speed]]></description><link>https://samperrin.netlify.com/posts/Set-Port-Speed-for-a-FortiGate-Virtual-Switch-Interface</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Set-Port-Speed-for-a-FortiGate-Virtual-Switch-Interface</guid><pubDate>Tue, 31 Mar 2015 14:11:30 GMT</pubDate><content:encoded>&lt;p&gt;You might come across a scenario where you have created a Virtual Switch/Hardware Switch on your FortiGate and you need to set a specific port within that switch to a different speed&lt;/p&gt;
+&lt;p&gt;In our case we had a 4 port switch, 1 of those ports connected to another appliance, the other device was set as 100mb Full – by default all of the ports on the FortiGate virtual-switch were set to auto, so this 1 port ultimately fell down to 100mb Half&lt;/p&gt;
+&lt;p&gt;Below are the steps to set a port to the correct speed within a FortiGate switch&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system virtual-switch
+edit &amp;lt;switch name&amp;gt;
+config port
+edit &amp;lt;port&amp;gt;
+set speed &amp;lt;speed&amp;gt;
+end
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Speed options:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;auto&lt;/li&gt;
+&lt;li&gt;10full&lt;/li&gt;
+&lt;li&gt;10half&lt;/li&gt;
+&lt;li&gt;100full&lt;/li&gt;
+&lt;li&gt;100half&lt;/li&gt;
+&lt;li&gt;1000full&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The steps needed to set an interface speed for a port that is&lt;strong&gt;not&lt;/strong&gt;in a virtual-switch are slightly different, for that you use:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;config system interface
+edit &amp;lt;port&amp;gt;
+set speed &amp;lt;speed&amp;gt;
+end
+end&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can use the&lt;em&gt;show&lt;/em&gt;command to show available ports/switches that you can edit&lt;/p&gt;
+&lt;p&gt;Within the FortiGate web console under Network &gt; Interfaces, if you hover over the Interface image you can see the speed of a port&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eed5cc48e2c765cac9ca4328a3aa5155/a120c/2015-03-31-14_46_50-fortigate-cc-dc01-fgt200d-01.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 443px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.499999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAA/ElEQVQY0zVPy06EMBTlS/0fl/6DK+POiW58EMeokZbSB5S2FBimDsOCh2HpFLyaeO/JycnNfZwbaMY4IYiQOEmqpnFt23bd/vOwa/bGWlUUGmAt6H9RgijKEhCo1xe8fX4MQ4zxuq7D11i7nTs6WUitodkaraWUaZqqP4EQHsdxnmfg4LSu394vy3Ly/ugOG7a9/Li7Rvdnt+c3bw8spggj2BtFEefcGEMpnaap73vnXADXYBLYew92SJIAilxfhFeb9ydBKEIRjjEwFwK8EEK6rhsg+iGo6rqsKsDvG9ZSzjEhOTjMIKXIMso4FBNGRZpxkUYYK2OU0blSP+XC/30TtbTTAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;2015 03 31 14 46 50 fortigate cc dc01 fgt200d 01&quot;
+        title=&quot;&quot;
+        src=&quot;/static/eed5cc48e2c765cac9ca4328a3aa5155/a120c/2015-03-31-14_46_50-fortigate-cc-dc01-fgt200d-01.png&quot;
+        srcset=&quot;/static/eed5cc48e2c765cac9ca4328a3aa5155/8ff5a/2015-03-31-14_46_50-fortigate-cc-dc01-fgt200d-01.png 240w,
+/static/eed5cc48e2c765cac9ca4328a3aa5155/a120c/2015-03-31-14_46_50-fortigate-cc-dc01-fgt200d-01.png 443w&quot;
+        sizes=&quot;(max-width: 443px) 100vw, 443px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9f15dcc3d034aed2da26471dc5a5e17d/efc6e/2015-03-31-14_48_38-fortigate-cc-dc01-fgt200d-01.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 441px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.083333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAA5UlEQVQI1w3L206DMACAYd7/OUy8MGZZMt2cyZYQGQpqoI4Bc7KyFZBD6WGkgAq1/8V392snhCBwXQAcAEqM+5/fVnRd9xdHIPq64/yZ0g2hBqWGEJYQdtuaFf6sas6ai5ak6dnfBb4q6ESbsdLwX43QeXIXMJzEJ/XrhKyUw2ANgy2lVWE/S0vCqMaaRko5jqMyTZL1m3n/rt9Yq2vzCieLLF/GcJYlD9X3Y5Et+/5FSruuwyKvCWdajjFjjKgoPSPkbb2tAw77yP3QD/vpEc53/gR4t0EwjeGcXzZqzgvvCFGBq3/Ve9IcdpXnvAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;2015 03 31 14 48 38 fortigate cc dc01 fgt200d 01&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9f15dcc3d034aed2da26471dc5a5e17d/efc6e/2015-03-31-14_48_38-fortigate-cc-dc01-fgt200d-01.png&quot;
+        srcset=&quot;/static/9f15dcc3d034aed2da26471dc5a5e17d/8ff5a/2015-03-31-14_48_38-fortigate-cc-dc01-fgt200d-01.png 240w,
+/static/9f15dcc3d034aed2da26471dc5a5e17d/efc6e/2015-03-31-14_48_38-fortigate-cc-dc01-fgt200d-01.png 441w&quot;
+        sizes=&quot;(max-width: 441px) 100vw, 441px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Upgrading Dell PowerEdge R710 BIOS]]></title><description><![CDATA[A quick How-To on upgrading the Dell PowerEdge R710 BIOS using a USB drive]]></description><link>https://samperrin.netlify.com/posts/Upgrading-Dell-PowerEdge-R710-BIOS</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Upgrading-Dell-PowerEdge-R710-BIOS</guid><pubDate>Mon, 23 Feb 2015 13:18:30 GMT</pubDate><content:encoded>&lt;p&gt;You will need to download the required BIOS from the Dell website, in ‘Non-Packaged’ File Format. I also used Rufus to create a bootable USB drive&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;R710 BIOS 6.4.0 – R710-060400C.exe&lt;/em&gt;&lt;br&gt;
+&lt;a href=&quot;https://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverid=4HKX2&quot; title=&quot;Dell Server BIOS R710 Version 6.4.0&quot;&gt;http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverid=4HKX2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Rufus 1.4.12&lt;/em&gt;&lt;br&gt;
+&lt;a href=&quot;https://rufus.akeo.ie/downloads/rufus-1.4.12.exe&quot; title=&quot;Rufus 1.4.12&quot;&gt;http://rufus.akeo.ie/downloads/rufus-1.4.12.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Once you have got the above we can begin to create our Bootable USB&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Plug in your USB drive and open Rufus.exe&lt;/li&gt;
+&lt;li&gt;From the Device drop down select your USB drive&lt;/li&gt;
+&lt;li&gt;Leave the other large drop downs as default&lt;/li&gt;
+&lt;li&gt;Label the USB drive if required&lt;/li&gt;
+&lt;li&gt;Check the 2nd, 3rd and 4th check boxes&lt;/li&gt;
+&lt;li&gt;Ensure FreeDOS is selected from the smaller drop down&lt;/li&gt;
+&lt;li&gt;Press Start&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4c2f61b1677d2b377ee989eadfe414bd/ce9b1/rufus-settings.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 326px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 151.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAIAAACjcKk8AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAEi0lEQVQ4y31UyW4bRxTkLwbwVXAM20EuOWRxLAQxkGuukvwLOQTIITDs2JEFwRLNbcjZh+SQs289+z6UHRFwaoaUkyBRCg/Nnia6X3W9et2zzx4Kzz6LLu+nbx+ap59Kvx5oL++ap/fk53fVF3cXzw6CN/fT/oO4/8B+fS+4vK/+cjA5+GRw54745POeef6FfvGkZr8v6e/cy0fzl1+qZ1/ZF98oZ18b5+0YjR7n1GFGHcajxyl1GPW/tX9+5Pz0yH/xQy9kjgLireVF4LtNnTdV2lRZVaZlkZR5UhVJnsV/RRrVdakrsxf911Ui9QL2qWGR8YhaymvX9VyPWJbjuiSOkyjqIk7ifaSINM0NXR/x84KIPZ85Nk1nQk1Hw+F4NBEE4fLigmHYKAp9QoLA34EQ4t7A8zzT9DKP64XsieMG87kky2td0xbzhapqmqZKorRaKfKyxXq9smynBuOyzIEsLaur3BdA+8Qw3clkwjIcy7KSKHIch/wMzfAczzGcJM2xgqMt0zQMw/eDOI48P84I3wuYE1WzBm8HDE1TFMVzLDXB75TjeIz0jOY5bjqb4azhYDgYDEGLeK6iWZnHg/ZT0yLr1QrcDMPcbDZVXYFhdYPy46xul4uiAO+6eb+nrRkOTTNTqk2oqGoYhsG/8HExbGe+7QY72seG5bWXZOgZSAoixNxJehtc10G+/Z2JH7Isr6mQWb+6uto0Td3Uxf8hrzd/dLSZE92wxqMxSLMsw/MCyzCCIBI/uA2oumWTVjCYxHF9VBX1EMFeECGsKIqw2m0AcdPyWtoh91TVbFFAgUWQn0wolLRumixLs1uR5uUmJ0LPmx1FUbpcLObSnJDww4cP19fX2+vdsN1P/4ntdru52qawp08fh1GGCum6bqInbMcLQhIn+d+wV6mLLM+yHN1R56C924w7QypgSs3mK0Wx3TRBG7VNhHHXHmEYocZJkoB2t1nokdlRmhUQodVJwMWl9iCWn06o0WgMw2u68bbfP311Kkrz9XoNtcEgK5ouM3MMq9M0DTMvFguBFzW9NenOoK0f8xyTpmnAP00zjGVZ7DcH3WaB5+FQuk3e1hk+g/5dP8q6YXIsNxqOFkvZbBvLlMQluqrwu8cgCBNBaNOCsKooIM+CBo+VJcquKMqUmmLRdlrAnjgyiLICDus2x9gpL2VcWJZlbEAP43mQpAUy456oouO46Kmd7Oi0rs58K1hR4okoyg5FUaIJyz2KbqXYPSDpR0BwqN1mpts745WwOti2bd3Abj8t/IXRsXesnW7ddEnU2pPQR1le5a2kOD5DGXeugAmTFBbNy6rB2M7T1rBQHm9Ymt1kTtKcY5l+fwBtoihayTJNszCS5pdLg7x6M5prrkYK2wstU794c7leKxAsdTt74nTXsVEDPLDIjGbXVA2nu0FquOFibRhuYAeJD9sSV1UVx7FhyoxgMx6DoCA+PJh6fkL8pKiuyvpdXjRF2RTVpmreYSzKfZTNe3zm1Tbz5z13/OOCPmeHz4Xxb9zopUT9Htl87Px3RDaHiB0ucqVEP/8T7uMb2DjkU+UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;rufus settings&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4c2f61b1677d2b377ee989eadfe414bd/ce9b1/rufus-settings.png&quot;
+        srcset=&quot;/static/4c2f61b1677d2b377ee989eadfe414bd/8ff5a/rufus-settings.png 240w,
+/static/4c2f61b1677d2b377ee989eadfe414bd/ce9b1/rufus-settings.png 326w&quot;
+        sizes=&quot;(max-width: 326px) 100vw, 326px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Running the Update&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Your new bootable drive will show within Windows Explorer, open it and copy your BIOS .exe download to the root of the drive.&lt;br&gt;
+Rename the .exe to something simpler, such as R710.exe (this will help later).&lt;/p&gt;
+&lt;p&gt;Insert the USB in to the server and boot, when prompted press&lt;strong&gt;F11&lt;/strong&gt;to Enter Boot Menu.&lt;br&gt;
+Use the arrow keys to highlight ‘Hard Drive C:’, on the sub-menu select your USB device and press enter.&lt;/p&gt;
+&lt;p&gt;When at the command prompt type in&lt;strong&gt;R710.exe&lt;/strong&gt;(if you did not rename the file in the earlier steps you will need to use the original name at this point). You will be entered in to the BIOS updater screen. Follow the steps until completion&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Forcing a BIOS Update&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you wish to re-flash your BIOS with the same version as already installed, or if you need to replace an OEM BIOS you might need to use&lt;strong&gt;&lt;em&gt;/forcetype&lt;/em&gt;&lt;/strong&gt;in order to force a BIOS update.&lt;/p&gt;
+&lt;p&gt;E.g. – `R710.exe /forcetype`&lt;/p&gt;</content:encoded></item><item><title><![CDATA[EqualLogic PS4100 and ESXi 5.5 VMkernel Setup]]></title><description><![CDATA[iSCSI VMkernel setup for EqualLogic MEM on ESXi 5.5 U2]]></description><link>https://samperrin.netlify.com/posts/EqualLogic-PS4100-and-ESXi-5-5-VMkernel-Setup</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/EqualLogic-PS4100-and-ESXi-5-5-VMkernel-Setup</guid><pubDate>Wed, 12 Nov 2014 13:07:30 GMT</pubDate><content:encoded>&lt;p&gt;Read the first blog post &lt;a href=&quot;https://samperrin.com/vmware/dell-mem-v1-2-and-esxi-5-5-u2/&quot; title=&quot;Dell MEM v1.2 and ESXi 5.5 U2&quot;&gt;here&lt;/a&gt; about Dell MEM and ESXi 5.5&lt;/p&gt;
+&lt;p&gt;As part of the EqualLogic MEM setup.pl script it creates a new vSwitch and also its iSCSI VMkernel’s, but due to that script not currently being compatible with ESXi 5.5 U2 we had to manually create the connections. Below is the setup we have used and a few differences compared to the Dell EqualLogic best practice document.&lt;/p&gt;
+&lt;p&gt;In the document it states that the heartbeat connection is no longer required for ESXi servers of version 5.1 or above. I had issues with this and found that if a switch that one of the adapters connected to failed, the pings would stop to the storage device and ESXi would report that all paths were down for the EqualLogic array, and therefore lose access to the datastore. I added a heartbeat connection in and was able to keep a path active when an adapter failed. Below will cover the settings I have in place and the tests I did to determine successful failover in various scenarios&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;The Storage Heartbeat VMkernel port is no longer required for ESX servers running version 5.1 and greater&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;vSwitch Setup&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a new Standard VMkernel vSwitch on your host and assign two or more network adapters to it (these are obviously the adapters that connect to your storage network where the EqualLogic sits)&lt;/li&gt;
+&lt;li&gt;Name the adapter “EQL Heartbeat”&lt;/li&gt;
+&lt;li&gt;Assign an IP to the EQL Heartbeat VMkernel port&lt;/li&gt;
+&lt;li&gt;Finish the setup screen&lt;/li&gt;
+&lt;li&gt;Find the vSwitch in the Networking window and select Properties&lt;/li&gt;
+&lt;li&gt;Add a new VMkernel port to the vSwitch; press Add, select VMkernel, label it EQL_1&lt;/li&gt;
+&lt;li&gt;Assign an IP address (same subnet as your heartbeat port), finish the setup&lt;/li&gt;
+&lt;li&gt;Repeat the process again and label the new VMkernel EQL_2, again this needs to be in the same subnet as the other two VMkernel ports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you have done that you should have something that looks similar to this;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/51c0156d41a8bf1ce33599b80853ff38/50ac3/vswitch1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 356px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 38.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAABYlAAAWJQFJUiTwAAABLklEQVQY03WQaW6DMBCFuf9h2n+9QFMaQRJU9nghsbERWxYKQUrBUGOriqqqn+TRaN48z9iG7/mMc/fDBQDE8X6z2QZBSGnatm3Xde3/NE1jxFEs/Y7j7HaO7/ue58kYx3EURmEQRGGI/gAVeZ4b5vrtdbWyLds017rEOc8yblvWu2lalk0IkRW2kMojc6KoqsrY+l6WF2WRHwm937/meZ6mScZzXaeMS2UYBiHErNCSpu9742XLQXbhlJzOl1E16Y6yKCBElFBCKAQwSY4QgD1AbXd7mJ/svZvynKbVqR5GMU1Cm6uyxOigFubLLZQlGEOU3G79w/xsA5dxJidQiiUId0qu6wrjA2fZYgZQ/j+CCOHf5uvndZzlvkJMYlToyTIuRa2ofBiU9PNsaf4Gju207aQBnLIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;vSwitch Layout&quot;
+        title=&quot;&quot;
+        src=&quot;/static/51c0156d41a8bf1ce33599b80853ff38/50ac3/vswitch1.png&quot;
+        srcset=&quot;/static/51c0156d41a8bf1ce33599b80853ff38/8ff5a/vswitch1.png 240w,
+/static/51c0156d41a8bf1ce33599b80853ff38/50ac3/vswitch1.png 356w&quot;
+        sizes=&quot;(max-width: 356px) 100vw, 356px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;We need to make a few more changes to this vSwitch;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Edit each of the items in the screen shot to have an MTU of 9000 (your switch must also support this!)&lt;/li&gt;
+&lt;li&gt;Edit vSwitch &gt; NIC teaming tab, all adapters should be active&lt;/li&gt;
+&lt;li&gt;Edit EQL Heartbeat &gt; NIC teaming tab, all adapters should be active (will most likely be grayed out as inherits settings from vSwitch)&lt;/li&gt;
+&lt;li&gt;Edit EQL_1 &gt; NIC teaming tab, under Failover Order tick Override switch failover adapter, keep one in Active and move the other to unused&lt;/li&gt;
+&lt;li&gt;Edit EQL&lt;em&gt;2 &gt; NIC teaming tab, under Failover Order tick Override switch failover adapter, keep one in Active and move the other to unused – this needs to be different to the one used in EQL&lt;/em&gt;1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b51c2ec6cb795885ae82b70f077fb2ff/2d920/eql_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 536px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 124.16666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAABYlAAAWJQFJUiTwAAADVUlEQVQ4y5VU2W7bRhTVVxZNYfupf+FPSfvUpyRFgsRIGjoG0tSWZFmUKIsiKe4z3BeRFBfJirUkh1RbCHbXg8vR4OqeuXPPnZnW92c/nDBnR+fM8fn74w/MycX7kwvmiHn75NWL716//PbnZ09ePj9i3h2d/7K3Y+bdNx8vTn98+tPpaevFZNQz9Ctda+vapaZeqeqVVtsnSfxNli/l6SdRhLNHyY1F99azKGdbZ5LYujZNzzBMTdOnU1NVXUo9y4IRTfcsO/Z9h9LI8+6KYlVVd2W5KqtlUW4Wi5Ftta4pQdBEEAVR9IOwLMv5fJ5l8zTLPN+zHcdxXYyEUoIPi9J69BynrSg12SV0NOYnEwF/w6IozvN8Npvpuj6VamBiGAY2RwjBxESQYXQUGWTqEiJKU1GU4EQi0EBOksQ0TcPQkcn1vKhBGIb4/CCwTPN3smOa2HYcx9htWRbzBiAjoW3bIPi+7x3AdV2q6zW5SwlUQRm+54OTHyBJUHi2dx6OcKVR1FWVVhdlKArLDvo3/Vo0FCBNoUmWZkg+i2dpkmJTswbwYI4lyyyryT3bQofYwYDnJxw34oYc22dhw8FQmAimSVzHaYqHGRBM0zRsCC3pqI3aqijd3PQbXSWO425vx7Isi4IwGAzhAZM0wAT1IzMEi4PgWlNRM1Wk8WjMIc713GaTs/v1erVaQV7U/PlP3N8Xee64jmXbgeteaxoyW/J0dCuwiqJiSehRldWuwWKx2G62Xw5QVZXbABrXmdEqWeS7vXa32+kPBnlRbDabbQNMdgcAGcvtBS/2gnVNnAIpTJyqXG53W6wNnRG5220RtllvDjMvl8t984o0rcmXmrbMi/v15g5Y1vjjt54tD7Ber+ulD8kdYgaOg/aixaqqNl0xzL8CpE7TtL42h+QsimzLtqgVBEFRFPnfADkfknHCZn5AqLWPmP8jHpEpCR1nOBzhwvx/MiGx5+G+4tym/wbEPCQv9hflv6GuPMvymqy2LnU9CSNcdxyvxxagmDiGhQ1wYIPGmURRG/e5T+kaL0CWVfP5A8NpmoUh0XU8j55tR3gTbAevBB6HxPOHhLSeCZO+RdvE7DwyaPlRnr5h2Tdsn+F5Zjx+O+J+VRVmwn/gx8/526+mFy9UnsIMDwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;eql 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b51c2ec6cb795885ae82b70f077fb2ff/2d920/eql_1.png&quot;
+        srcset=&quot;/static/b51c2ec6cb795885ae82b70f077fb2ff/8ff5a/eql_1.png 240w,
+/static/b51c2ec6cb795885ae82b70f077fb2ff/e85cb/eql_1.png 480w,
+/static/b51c2ec6cb795885ae82b70f077fb2ff/2d920/eql_1.png 536w&quot;
+        sizes=&quot;(max-width: 536px) 100vw, 536px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/37ce090fd37a26025b16943df9b87d01/b1cde/eql_2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 537px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 123.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAABYlAAAWJQFJUiTwAAADZklEQVQ4y5VUyXLbRhDlR9opS/ecfUt+Jqc4Fy9RuSqKRcl2iYplSSQlAiAJAuQMBvtO7AApkVryQMgVy3a2V12oAWpeL6+70fp+96ft9uutt/vbb9vbB3t4bsH233z364vHO68evXz++NXzrfbuk4O9J/tvYFvt3x+9P3j6y8/Pfvyh9XLIcZraU9W+yrqMnVHaw0FRTqfTM0K6hJzKMj4OTIOzzMYGljm0rY6itI7IzGWqSimVp4xQU1Vd07Q0XaPUNozA9UxNd01rkefLolwWBWxR5Kuqoq7T6ijUtyx+CIxt2ynKMk3TJE3jJHZc+DFt2zZtSzMMTdN0PHVdM3TXdjiF1mTPMIXhSBQlFWDM84Isy+bzOd6kiSTLEtJijOGJL4rC4AWeeEpbR0xxDXMiSZOJpOuG67phOM+yNIoiXFIUBRUgeBAEfuA38Ly6Fl65J+uIHAZhkiR5nqcbgIwsDMPAbXh0HuJTZIXGvo+YKBic/BOQeZLETf3ZQyBGEkUCg9pIjJJer39xMRhBtNFYnEioEJFRdhiGOPh+0ACvnu9HcVzlxZCx1geVmUzp9fvCcMjz/HmNQb/bvzgfCMIICqFgVmukM6ZCaviFKIuiEECuIxMKwnQ6nRECPpo2mxFJlgaDwVgU2YYKsLoRHtKBClEY8hiSDjowFc/5c8iNWygRuV1tgAgo+PLysnm9Wq3KokAilmUFnlcL1qEKI2NO7KOBmIG8yMuivLm5ubu7q6rq+vr67jMsFguQbceZB8FGMEqJLP5xcnTy8fjk7DSKExBAvr29Xa/XzaEByMvlsm5jlpV5Xgt2SIhjUT+2Vlfrje8KmTeR0TDwP48Mct2nNC2zrCa/k6UqzVbra6RU1VjgRtWc7r/cA47wfEDuUBI6DnoriuJ0NtMx938DiBzH92PzFxlLYFoWFhFj2MzWN4GQ3yDHQYD2NzfSf8TXZBq53sWAcz0v/7/kQ0oiz8O+zueY2X8B5rwhF1lW9xlk/GKSjdf/gqZy7O1IU1vvpjJqthwHaX9t2CGsEgx7tTljLj3X97FuPCIfK/S2rH9ciyz7wpZQfj7XCdEpdQ0D1Tm6kSF1zw8tW7Ht1jOB7xo6FvNYU7+wj7p2SGY7ve5Or7crcO3x6DeOey/L+xNxTxBei6M/ARtdMELgznelAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;eql 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/37ce090fd37a26025b16943df9b87d01/b1cde/eql_2.png&quot;
+        srcset=&quot;/static/37ce090fd37a26025b16943df9b87d01/8ff5a/eql_2.png 240w,
+/static/37ce090fd37a26025b16943df9b87d01/e85cb/eql_2.png 480w,
+/static/37ce090fd37a26025b16943df9b87d01/b1cde/eql_2.png 537w&quot;
+        sizes=&quot;(max-width: 537px) 100vw, 537px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iSCSI Software Adapter&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you don’t yet have an iSCSI software adapter now is the time to add one in, once you have done that select it and press Properties. Under Network Configuration and press Add, select the two adapters you just configured (EQL&lt;em&gt;1 and EQL&lt;/em&gt;2).&lt;/p&gt;
+&lt;p&gt;While you are here also add in your EqualLogic’s group IP address in to the Dynamic Discovery tab&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Setup VMware Round Robin&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The next steps I have documented in the post &lt;a href=&quot;https://samperrin.com/vmware/dell-mem-v1-2-and-esxi-5-5-u2/&quot; title=&quot;Dell MEM v1.2 and ESXi 5.5 U2&quot;&gt;Dell MEM v1.2 and ESXi 5.5 U2&lt;/a&gt;, so I wont cover them again here. These steps setup cover the remaining recommendations from Dell.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Testing Failover&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To confirm the above settings I did the followings tests to confirm failover – during these tests you should not have all paths down.&lt;br&gt;
+These tests make the assumption that you have at least two switches, two network adapters and two controllers in your EqualLogic, and that you return to default before running the next test.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove a network cable from the host (which connects to the storage network)&lt;/li&gt;
+&lt;li&gt;Remove the other network cable&lt;/li&gt;
+&lt;li&gt;Power off 1 switch&lt;/li&gt;
+&lt;li&gt;Power off other switch&lt;/li&gt;
+&lt;li&gt;Disconnect controller&lt;/li&gt;
+&lt;li&gt;Disconnect other controller&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you do encounter an APD scenario double-check your cabling, as per this diagram from Dell, a long with the heartbeat adapter the cabling also caused a problem. This was resolved with the help of this diagram.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/13d418a768d4d03de2b58c8a277c1f1a/6c2f2/ps4100-cabling.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 767px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 102.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAIAAADJt1n/AAAACXBIWXMAABYlAAAWJQFJUiTwAAAEXElEQVQ4y2VTaVPiWBTlX86nqZ7uqqmembZ7tLvaFdlCSAgQJCiiEFBBXLHH6VbbFRVQRBaVTWgRF1CQJSEgBmSZRK2pqZpbp25uvTon77573uMEw7FwOBJ6wmk0dhY/Pw6eMlUoFA49LV1eXno8Xrvd4XTu7bsOmMQULpe7Uqlw9l2er9+W19Y3v6+uMTkYiuw6DzY2tmzbO5ubNkZynrgc0Rt7+7gIItMZjEIhAACgyTxZq9U4IzpciihUKgxTYUNDGo1mmMsXfu7qbm/vaG//+P7Dn4f7+wY5/POrNwolNjesfvPL6z4ub3VtvdVqcXAcn5w0D06MD89aDfM2LW5BYVBtMJtxi3FAZzWZnfsHkwZcAklVmNpiwFFUiSCK5eUVVkxV6Os8lchR8RyVuCsnstRd8f4kXU7Gk4Fdb6tcqtRqzCAikUg0Ggs/zeLk5CQajbLio5vSQjC7HSc2zwrP2PiRX48TvqOzU4e3VSoxpEaj8fgU1WqtQBD5ApMIVnx4XQymyyyj2XqJJltV05lKMFynqH9X/h8c1yVxmMjR5XKBpMgigxJJFouleyJ+nj30kjdpqnxPFal8gbhJpdK36btsLpPJEATZbDY5mHWTqzYCgn6xRAJCkEAkAECQJxJpQImB268QA2IpImAIg0auyiAAYYVCyUx7x+6o1xsc89wiBMuUMKSSyzGFAoUhTCZTwLAJRWcRmX5AqRrRS3UW7SA2OGYRakw9fczf4UAgWK/XOZVgqPBtmbDZ8xvbLLZ20hu2zIYt63TlPb4KWczR9UCmXK3XK9XqVanuD4TPzy9ezmwfxc08nlAgQIQADIjlfP6UBJ4AQDMDsWRaOTCl1ujU+ilUaVJikuEJGaqGpQrXgZttewE3IgIBAIFSRCqRy1ARoBXDQqEYFkMSAISEgFSqBBVaDJZMQ3C/dLCXJ+LxAY/Xx7ZNPz7eP9APD3SNpjNl2u2NHR/F/OmyP0n6k8WjVPHwirwoVB7qj0T4NHKdf6ixhjefzOM8e/hsZIZuXp5dt3LZJ29rrRaDRwaNBlO06Hg8dkPWmyz7Rdx8uRfsN1tlxFct4p7O7WW3fkpt/ZrZeX27/ark/r3RqDzEL34w4v9ekvRNMplKXVxcpVPJRL4c9kWoRCp94Txf/SO00n663hlbene9wy0U7krhcCBxS1ClQiFPkiTTPGdmQj+gHhKKAEgCzi85zCMLs9246u2CpWN8rE0/0rk81IcaoKkZ7ZJ/YQ7VT6LYYE9Pn3ZklH3Pb397x7zyz51dfD5/0fr9i2bmKzRu5Vn+Bsx/8ScWwdkZMTwvHV4atS5IZe97QRBGOjo+ocoBdmexWILI5B87PnVx+1dM1kWZDkdmce60WWQ28saMwNw4gs9g819Gl3VaU7dsmOG3tX2QyRU0TXPch56j4xOHY29n1x7wBY7dIZczurcePrDH3PYfLlt03xFwO0/druj2gc/jP/b7j2y2ba/Pz7T9D1FTttsA5mYbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ps4100 cabling&quot;
+        title=&quot;&quot;
+        src=&quot;/static/13d418a768d4d03de2b58c8a277c1f1a/6c2f2/ps4100-cabling.png&quot;
+        srcset=&quot;/static/13d418a768d4d03de2b58c8a277c1f1a/8ff5a/ps4100-cabling.png 240w,
+/static/13d418a768d4d03de2b58c8a277c1f1a/e85cb/ps4100-cabling.png 480w,
+/static/13d418a768d4d03de2b58c8a277c1f1a/6c2f2/ps4100-cabling.png 767w&quot;
+        sizes=&quot;(max-width: 767px) 100vw, 767px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dell MEM v1.2 and ESXi 5.5 U2]]></title><description><![CDATA[Install Dell MEM v1.2 on ESXi 5.5 U2 using esxcli]]></description><link>https://samperrin.netlify.com/posts/Dell-MEM-v1-2-and-ESXi-5-5-U2</link><guid isPermaLink="false">https://samperrin.netlify.com/posts/Dell-MEM-v1-2-and-ESXi-5-5-U2</guid><pubDate>Tue, 04 Nov 2014 12:58:30 GMT</pubDate><content:encoded>&lt;p&gt;It would seem that the Dell MEM v1.2 will not install on ESXi 5.5 U2 using esxcli. It can apparently be deployed using vMA or VUM but as these aren’t used we had to look for an alternative.&lt;/p&gt;
+&lt;p&gt;The issue was with Dell who pointed us towards the following best practice document;&lt;br&gt;
+&lt;a href=&quot;http://en.community.dell.com/cfs-file/__key/telligent-evolution-components-attachments/13-4491-00-00-20-43-46-01/TR1091-Best-Practices-with-EqualLogic-and-VMware-1.1.pdf?forcedownload=true&quot; title=&quot;TR1091-Best-Practices-with-EqualLogic-and-VMware-1.1.pdf&quot;&gt;http://en.community.dell.com/cfs-file/__key/telligent-evolution-components-attachments/13-4491-00-00-20-43-46-01/TR1091-Best-Practices-with-EqualLogic-and-VMware-1.1.pdf?forcedownload=true&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In summary they recommend the following.&lt;br&gt;
+– Use Round Robin&lt;br&gt;
+– Change from 1000 IO’s per path to 3 IO’s per path&lt;br&gt;
+– Change iSCSI Timeout values from default to 60 seconds&lt;br&gt;
+– Disable Delayed ACK&lt;/p&gt;
+&lt;p&gt;Dell have provided some handy scripts to get you started, here they are for ESXi 5.x (they can all be found in the PDF attached earlier in the post so please refer to this for full details);&lt;/p&gt;
+&lt;p&gt;Set all EqualLogic volumes to Round Robin and set IOPS value to 3 – this must be run on all hosts;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;esxcli storage nmp satp set --default-psp=VMW_PSP_RR --satp=VMW_SATP_EQL ; for i in `esxcli storage nmp device list | grep EQLOGIC|awk &amp;#39;{print $7}&amp;#39;|sed &amp;#39;s/(//g&amp;#39;|sed &amp;#39;s/)//g&amp;#39;` ; do esxcli storage nmp device set -d $i --psp=VMW_PSP_RR ; esxcli storage nmp psp roundrobin deviceconfig set -d $i -I 3 -t iops ; done&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Set a default so that new EQL volumes will inherit the correct settings;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;esxcli storage nmp satp rule add -s &amp;quot;VMW_SATP_EQL&amp;quot; -V &amp;quot;EQLOGIC&amp;quot; -M &amp;quot;100E-00&amp;quot; -P &amp;quot;VMW_PSP_RR&amp;quot; -O &amp;quot;iops=3&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The above command will require a restart of the host before it becomes effective, once you have restarted you can verify the correct settings using the below;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;esxcli storage nmp device list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The output will be similar to what is shown below, the parts in bold are what you are looking for;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;naa.6090a098703e5059e3e2e483c401f002
+Device Display Name: EQLOGIC iSCSI Disk
+(naa.6090a098703e5059e3e2e483c401f002) 
+Storage Array Type: VMW_SATP_EQL
+Storage Array Type Device Config: SATP VMW_SATP_EQL does not support device configuration. 
+Path Selection Policy: VMW_PSP_RR
+Path Selection Policy Device Config: {policy=iops,iops=3,bytes=10485760,useANO=0;lastPathIndex=3: NumIOsPending=0,numBytesPending=0}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;VMW&lt;em&gt;SATP&lt;/em&gt;EQL&lt;/strong&gt; (indicates its an EqualLogic)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;VMW&lt;em&gt;PSP&lt;/em&gt;RR&lt;/strong&gt; (path selection is set to Round Robin)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;policy=iops,iops=3&lt;/strong&gt; (shows IOPS have been set to 3)&lt;/p&gt;
+&lt;p&gt;Next up is to change the default iSCSI timeout values. “By default, the MEM configuration script will make an attempt to set each of these timeout values to 60 seconds which is the recommendation.”, so we will copy that with the below;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;esxcli iscsi adapter param set --adapter=vmhba## --key=LoginTimeout --value=60&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Replace ## with that of your iSCSI software adapter, for example vmhba33.&lt;/p&gt;
+&lt;p&gt;After you have done the above you will need to disable Delayed ACK, Dell don’t provide a command line for disabling this, so it needs to be done through the vCentre GUI – please refer to Page 10 in the PDF for steps on how to do this.&lt;/p&gt;
+&lt;p&gt;Dell do list a few other recommendations, around such things as LRO and SIOC but I have not applied these so I wont go in to detail on what they mention.&lt;/p&gt;
+&lt;p&gt;Hopefully this post will come in handy for a few people, as I know it held us back a bit!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Please check the commands before you apply them and also work with your vendor if you are unsure of the implications of changes some of the settings listed above will have towards other storage arrays, etc. 🙂&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I will soon be posting about the VMkernel/NIC setup for this, as we have had some issues relating to that too – events such as APD! I will update this post with a link to that once it is ready&lt;/p&gt;
+&lt;p&gt;UPDATE: Post relating to iSCSI setup is here! (to be updated)&lt;/p&gt;</content:encoded></item></channel></rss>

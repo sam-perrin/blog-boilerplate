@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://samperrin.netlify.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/contact</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/CentOS-7---Installing-pymssql-with-pip--libgnutls-so-26-error</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/tags/other/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/tags/development/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/categories/other/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Behind-Automation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/tags/automation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Dell-MEM-v1-2-and-ESXi-5-5-U2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/tags/vmware/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/categories/v-mware/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Disable-SSLv3-on-FortiGate-GUI-and-SSL-VPN</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Elasticsearch-Cluster-Install-on-CentOS-7</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/FortiGate-as-Slave-DNS-with-Windows-DNS-Master</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/FortiGate---Change-Switch-Mode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/FortiGate-Reports-Menu-Missing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/EqualLogic-PS4100-and-ESXi-5-5-VMkernel-Setup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Install-VestaCP-on-Google-Cloud-in-5-steps</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/FortiManager-Disable-SSLv3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/The-Importance-Of-Standards</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/categories/automation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Small--Medium-or-Large--There-Is-No-One-Size-Fits-All</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/IPsec-VPN-with-Public-IP-Subnet-s-on-a-FortiGate</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Set-Port-Speed-for-a-FortiGate-Virtual-Switch-Interface</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/VMware-vRealize-Automation-8-Podcast</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/tags/vra/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/posts/Upgrading-Dell-PowerEdge-R710-BIOS</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://samperrin.netlify.com/tags/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>

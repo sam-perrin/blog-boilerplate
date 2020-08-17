@@ -1,1 +1,1 @@
-blog-boilerplate
+A modified version of [gatsby-starter-lumen](https://github.com/alxshelepenok/gatsby-starter-lumen.git) with PrismJS

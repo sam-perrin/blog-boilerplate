@@ -1,0 +1,98 @@
+backend:
+  name: github
+  repo: sam-perrin/blog-boilerplate
+
+media_folder: static/img
+public_folder: /img
+
+display_url: https://vigilant-swirles-a4471c.netlify.app/
+
+collections:
+  - name: posts
+    label: 'Posts'
+    folder: src/pages/content/posts
+    slug: "{{year}}-{{month}}-{{day}}---{{slug}}"
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    fields:
+      - { name: date, label: Date, widget: datetime } 
+      # - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title, required: true }
+      - { name: layout, label: Layout, widget: "hidden", default: "post" }
+      - { name: draft, label: Draft, widget: "boolean", default: false}
+      # - { name: path, label: Path, default: "/posts/{{fields.title}}/" }
+      # - { name: path, label: Path, widget: "relation", collection: "posts",  searchFields: ['title'], valueField: "/posts/{{fields.title}}/" }
+      # - { name: category, label: Category }
+      - label: Category
+        name: category
+        widget: "relation"
+        collection: "categories"
+        searchFields: ['title']
+        valueField: "title"
+      # - { name: tags, label: Tags, widget: list }
+      - label: 'Tags'
+        name: 'tags'
+        widget: "relation"
+        # widget: 'list'
+        multiple: true
+        collection: 'tags'
+        searchFields: ['title']
+        valueField: 'title'
+        # fields:
+        #   - widget: 'relation'
+        #     collection: 'postTags'
+        #     searchFields: ['title']
+        #     valueField: 'title'
+
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: tags
+    label: 'Tags'
+    editor:
+      preview: false
+    folder: src/pages/content/tags
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      # - { label: Template, name: template, widget: hidden, default: BlogIndex }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+  - name: categories
+    label: 'Categories'
+    editor:
+      preview: false
+    folder: src/pages/content/categories
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      # - { label: Template, name: template, widget: hidden, default: BlogIndex }
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      # - {
+      #     label: Featured Image,
+      #     name: featuredImage,
+      #     widget: image,
+      #     required: false,
+      #   }
+      # - label: 'Meta'
+      #   required: false
+      #   name: 'meta'
+      #   widget: 'object'
+      #   fields:
+      #     - { label: Title, name: title, widget: string, required: false }
+      #     - {
+      #         label: Description,
+      #         name: description,
+      #         widget: text,
+      #         required: false,
+      #       }
+      #     - {
+      #         label: Canonical Link,
+      #         name: canonicalLink,
+      #         widget: string,
+      #         required: false,
+      #       }
+      #     - { label: Noindex, name: noindex, widget: boolean, required: false }
